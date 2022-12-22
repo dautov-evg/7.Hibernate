@@ -16,21 +16,11 @@ public class App {
         try {
             session.beginTransaction();
 
-            // Обновление имени у сущности с id=2
-//            Person person = session.get(Person.class, 2);
-//            person.setName("New name");
 
-//            Удаление сущности с id=2
-//            Person person = session.get(Person.class, 2);
-//            session.delete(person);
 
-            Person person = new Person("Some name", 60);
-            session.save(person);
 
 
             session.getTransaction().commit();
-
-            System.out.println(person.getId());
         } finally {
             sessionFactory.close();
         }
