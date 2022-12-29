@@ -74,15 +74,15 @@ public class App {
 //            person.getItems().forEach(i -> i.setOwner(null));
 
 
-//            Замена владельца у существующего товара
-            Person person = session.get(Person.class, 4);
-            Item item = session.get(Item.class, 1);
-//            Удаление списка товаров у старого владельца
-            item.getOwner().getItems().remove(item);
-//            Устанавливаем новое значение для товара в колонке person_id
-//            SQL - запрос
-            item.setOwner(person);
-            person.getItems().add(item);
+////            Замена владельца у существующего товара
+//            Person person = session.get(Person.class, 4);
+//            Item item = session.get(Item.class, 1);
+////            Удаление списка товаров у старого владельца
+//            item.getOwner().getItems().remove(item);
+////            Устанавливаем новое значение для товара в колонке person_id
+////            SQL - запрос
+//            item.setOwner(person);
+//            person.getItems().add(item);
 
 
 
