@@ -6,10 +6,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 
 public class App {
@@ -23,7 +21,14 @@ public class App {
         try {
             session.beginTransaction();
 
+//            Каскадирование
+            Person person = new Person("Test cascading", 30);
+            person.addItem(new Item("Test cascading item 1"));
+            person.addItem(new Item("Test cascading item 2"));
+            person.addItem(new Item("Test cascading item 3"));
 
+
+            session.save(person);
 
             session.getTransaction().commit();
         } finally {
