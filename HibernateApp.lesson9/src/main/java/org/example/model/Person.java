@@ -60,6 +60,8 @@ public class Person {
 
     public void setPassport(Passport passport) {
         this.passport = passport;
+//        Для выстраивания двусторонней связи
+        passport.setPerson(this);
     }
 
     @Override

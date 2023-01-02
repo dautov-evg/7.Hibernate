@@ -20,7 +20,7 @@ public class App {
             session.beginTransaction();
 //            создаем нового челоека и новый паспорт
             Person person = new Person("Test person", 25);
-            Passport passport = new Passport(person,12345);
+            Passport passport = new Passport(12345);
 //            устанавливаем связь с двух сторон чтобы в кэш Hibernate была правильная информация
             person.setPassport(passport);
 //            сохраняем в БД
