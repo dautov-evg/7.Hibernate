@@ -11,12 +11,8 @@ CREATE TABLE Item(
 );
 
 INSERT INTO Person(name, age) VALUES ('Tom', 35);
-INSERT INTO Person(name, age) VALUES ('Bob', 52);
-INSERT INTO Person(name, age) VALUES ('Katy', 14);
+
 
 INSERT INTO item(person_id, item_name) VALUES (1, 'Book');
 INSERT INTO item(person_id, item_name) VALUES (1, 'AirPods');
-INSERT INTO item(person_id, item_name) VALUES (2, 'iPhone');
-INSERT INTO item(person_id, item_name) VALUES (3, 'Kindle');
-INSERT INTO item(person_id, item_name) VALUES (3, 'TV');
-INSERT INTO item(person_id, item_name) VALUES (3, 'PlayStation');
+INSERT INTO item(person_id, item_name) VALUES (1, 'iPhone');
