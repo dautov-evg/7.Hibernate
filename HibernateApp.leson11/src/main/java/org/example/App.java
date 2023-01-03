@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.util.List;
 
 
 public class App {
@@ -37,13 +38,19 @@ public class App {
             System.out.println("Внутри второй транзакции");
 
             person = (Person) session.merge(person);
-            Hibernate.initialize(person.getItems());
+
+//            Hibernate.initialize(person.getItems());
+
+            List<Item> items = session.createQuery("select i from Item i where i.owner.id=:personId", Item.class)
+                    .setParameter("personId", person.getId()).getResultList();
+
+            System.out.println(items);
 
             session.getTransaction().commit();
 
             System.out.println("Вне второй сессии");
 
-            System.out.println(person.getItems());
+//            System.out.println(person.getItems());
         } finally {
             sessionFactory.close();
         }
