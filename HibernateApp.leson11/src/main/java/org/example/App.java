@@ -37,7 +37,7 @@ public class App {
 
             System.out.println("Внутри второй транзакции");
 
-            person = (Person) session.merge(person);
+//            person = (Person) session.merge(person);
 
 //            Hibernate.initialize(person.getItems());
 
