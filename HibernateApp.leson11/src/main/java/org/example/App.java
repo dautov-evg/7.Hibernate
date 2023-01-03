@@ -23,19 +23,26 @@ public class App {
 
             Person person = session.get(Person.class, 1);
             System.out.println("Получили человека");
-            System.out.println(person);
 
-            Hibernate.initialize(person.getItems()); // подгружаем связанные ленивые сущности
-
-
-//            Item item = session.get(Item.class, 1);
-//            System.out.println("Получили товар");
-//
-//            System.out.println(item.getOwner());
 
             session.getTransaction().commit();
             //session.close()
-            System.out.println("Вне сессии");
+            System.out.println("Сессия закончилась (session.close())");
+
+
+            // Открываем сессию и транзакцию еще раз (в любом другом месте в коде)
+            session = sessionFactory.getCurrentSession();
+            session.beginTransaction();
+
+            System.out.println("Внутри второй транзакции");
+
+            person = (Person) session.merge(person);
+            Hibernate.initialize(person.getItems());
+
+            session.getTransaction().commit();
+
+            System.out.println("Вне второй сессии");
+
             System.out.println(person.getItems());
         } finally {
             sessionFactory.close();
