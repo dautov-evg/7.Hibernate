@@ -10,6 +10,7 @@
         <module name="HibernateApp" />
         <module name="HibernateApp.leson4" />
         <module name="HibernateApp.leson5" />
+        <module name="HibernateApp.startlesson" />
         <module name="HibernateApp.leson3" />
       </profile>
     </annotationProcessing>
