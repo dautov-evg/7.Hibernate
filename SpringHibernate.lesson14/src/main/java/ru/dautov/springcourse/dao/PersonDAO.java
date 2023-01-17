@@ -54,6 +54,5 @@ public class PersonDAO {
         Session session = sessionFactory.getCurrentSession();
         Person person = session.get(Person.class,id);
         session.remove(person);
-
     }
 }
