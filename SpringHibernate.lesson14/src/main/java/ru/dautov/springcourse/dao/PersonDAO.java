@@ -32,8 +32,7 @@ public class PersonDAO {
     @Transactional(readOnly = true)
     public Person show(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Person person = session.get(Person.class, id);
-        return person;
+        return session.get(Person.class, id);
     }
 
     @Transactional
